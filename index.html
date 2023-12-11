@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <style>
+      /* You can put additional styles here if needed */
+      .gradient-text {
+          background-image: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d, #f56040, #f77737, #fcaf45, #ffdc80);
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+      }
+
+      /* Styles for the solid color background */
+      .background {
+          background-color: #3b5ea3; /* Change this to your preferred background color */
+          min-height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 0 1rem; /* Added padding for mobile and desktop */
+      }
+
+      /* Styles for the card */
+      .card {
+          background-color: #ffffff; /* Card background color */
+          padding: 2rem;
+          border-radius: 0.75rem;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          width: 100%; /* Card width set to 100% */
+          max-width: 600px; /* Adjust the maximum width as needed */
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-100">
+    <div class="background">
+      <div class="w-full text-center">
+        <div class="card">
+          <h1 class="mb-4 text-4xl font-bold">
+            <span id="daysCounter" class="gradient-text text-6xl font-bold"></span> days since that beautiful day! <br />
+            and counting...
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Calculate days since December 2, 2023
+      const targetDate = new Date('December 2, 2023').getTime();
+      const currentDate = new Date().getTime();
+
+      const daysDifference = Math.floor((currentDate - targetDate) / (1000 * 60 * 60 * 24));
+      document.getElementById('daysCounter').innerText = daysDifference;
+    </script>
+  </body>
+</html>
